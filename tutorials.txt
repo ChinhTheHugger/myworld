@@ -1,0 +1,13 @@
+https://www.geeksforgeeks.org/how-to-integrate-mysql-database-with-django/
+
+https://www.geeksforgeeks.org/django-project-creating-a-basic-e-commerce-website-for-displaying-products/
+
+https://www.etutorialspoint.com/index.php/251-how-to-get-data-from-mysql-in-django-view-with-models
+
+https://stackoverflow.com/questions/19189813/setting-django-up-to-use-mysql
+
+https://bashooka.com/html/free-drag-drop-html-website-builders/
+
+XAMPP: service > stop MySQL > start MySQL on XAMPP
+
+https://html5-templates.com/

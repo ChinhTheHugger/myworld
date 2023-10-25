@@ -1,0 +1,234 @@
+{% extends 'navbar.html' %}
+
+{% block carinfo %}
+
+    <style>
+        div.gallery {
+            opacity: 0.5;
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 500px;
+        }
+        
+        div.gallery:hover {
+            opacity: 1;
+            border: 3px solid #777;
+        }
+        
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+        
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        div.imageContainer {
+            display: flex;
+            justify-content: center;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table.center {
+            margin-left: auto; 
+            margin-right: auto;
+        }
+
+        .container_button {
+            height: 100px;
+            position: relative;
+            border: none;
+        }
+
+        .center_button {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button_style {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        /* The expanding image container */
+        .container {
+            position: relative;
+            display: none;
+        }
+
+        /* Expanding image text */
+        #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Closable button inside the expanded image */
+        .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+    </style>
+
+    <p></p>
+        
+    <div class="imageContainer">    
+        <div class="gallery">
+            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2014-mercedes-benz-e-class-4-door-sedan-e350-sport-rwd-angular-front-exterior-view_100430386_l.jpg&f=1&nofb=1&ipt=77fbf84dd24eb272be93427ee82a0321b52d589e72c9a1d445d395aa79b5a5f5&ipo=images" onclick="myFunction(this)">
+            <div class="desc">Front Exterior</div>
+        </div>
+
+        <div class="gallery">
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2017-mercedes-benz-e-class-e300-sport-rwd-sedan-angular-rear-exterior-view_100566793_l.jpg&f=1&nofb=1&ipt=166a9f3af39284a3cbb70d588a40ce35e41d6ed9ca91fc0c69a6c9f6796b0573&ipo=images" onclick="myFunction(this)">
+            <div class="desc">Back Exterior</div>
+        </div>
+            
+        <div class="gallery">
+            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fst.automobilemag.com%2Fuploads%2Fsites%2F11%2F2016%2F01%2F2017-Mercedes-Benz-E-Class-interior-cockpit.jpg&f=1&nofb=1&ipt=8bbe158999c757ac8041f58bd5ace96e6c76d0aa1e1b67bda03a2fdde6529d03&ipo=images" onclick="myFunction(this)">
+            <div class="desc">Interior</div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+            <img id="expandedImg" style="width:100%">
+            <div id="imgtext"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+        <img id="expandedImg" style="width:100%">
+        <div id="imgtext"></div>
+    </div>
+      
+    <script>
+
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+        }
+
+        function myFunction(imgs) {
+            var expandImg = document.getElementById("expandedImg");
+            var imgText = document.getElementById("imgtext");
+            expandImg.src = imgs.src;
+            imgText.innerHTML = imgs.alt;
+            expandImg.parentElement.style.display = "block";
+        }
+    </script>
+
+    <p></p>
+
+    <table class="center" style="width: 1000px;">
+        <tr>
+            <th style="display: none;">Header 1</th>
+            <th style="display: none;">Header 2</th>
+        </tr>
+        <tr style="height: 50px;">
+            <td>Model name</td>
+            <td>Model name here</td>
+        </tr>
+        <tr style="height: 50px;">
+            <td>Brand</td>
+            <td>Car brand here</td>
+        </tr>
+        <tr style="height: 50px;">
+            <td>Year</td>
+            <td>Production year here</td>
+        </tr>
+        <tr style="height: 50px;">
+            <td>Body type</td>
+            <td>Car body type here</td>
+        </tr>
+        <tr style="height: 50px;">
+            <td>Num. of seats</td>
+            <td>Number of seats here</td>
+        </tr>
+        <tr style="height: 50px;">
+            <td>In stock</td>
+            <td>Number of cars available here</td>
+        </tr>
+    </table>
+
+    <p></p>
+
+    <div class="container_button">
+        <div class="center_button">
+            <button class="button_style" style="width: 300px; height: 100px; font-size: xx-large">Rent car</button>
+        </div>
+    </div>
+    
+{% endblock %}
