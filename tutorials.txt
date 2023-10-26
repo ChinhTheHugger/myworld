@@ -11,3 +11,5 @@ https://bashooka.com/html/free-drag-drop-html-website-builders/
 XAMPP: service > stop MySQL > start MySQL on XAMPP
 
 https://html5-templates.com/
+
+https://www.pythontutorial.net/django-tutorial/
