@@ -3,8 +3,10 @@
 {% block search %}
     <style>
 
+/* SECTION: content table */
+
         table, th, td {
-            border: none;
+            border: 1px solid black;
             border-collapse: collapse;
         }
 
@@ -13,23 +15,14 @@
             margin-right: auto;
         }
 
+/* END SECTION: content table */
+
+/* SECTION: action button */
+
         .container_button {
             height: 100px;
             position: relative;
             border: none;
-        }
-
-        .button_style {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
         }
 
         .center_button {
@@ -41,9 +34,9 @@
         }
 
         .button_style {
-            background-color: #4CAF50;
+            background-color: orange;
             border: none;
-            color: white;
+            color: black;
             padding: 15px 32px;
             text-align: center;
             text-decoration: none;
@@ -52,6 +45,12 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+
+        .button_style:hover {
+            background-color: gold;
+        }
+
+/* END SECTION: action button */
 
     </style>
 

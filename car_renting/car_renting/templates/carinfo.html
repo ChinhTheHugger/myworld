@@ -3,6 +3,9 @@
 {% block carinfo %}
 
     <style>
+
+/* SECTION: image gallery */
+
         div.gallery {
             opacity: 0.5;
             margin: 5px;
@@ -31,6 +34,10 @@
             justify-content: center;
         }
 
+/* END SECTION: image gallery */
+
+/* SECTION: content table */
+
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -40,6 +47,10 @@
             margin-left: auto; 
             margin-right: auto;
         }
+
+/* END SECTION: content table */
+
+/* SECTION: action button */
 
         .container_button {
             height: 100px;
@@ -56,7 +67,7 @@
         }
 
         .button_style {
-            background-color: #4CAF50;
+            background-color: #4caf50;
             border: none;
             color: white;
             padding: 15px 32px;
@@ -68,166 +79,256 @@
             cursor: pointer;
         }
 
-        /* The expanding image container */
+        .button_style:hover {
+            color: black;
+            background-color: gold;
+        }
+
+/* END SECTION: action button */
+
+/* SECTION: slideshow gallery */
+
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        /* Position the image container (needed to position the left and right arrows) */
         .container {
             position: relative;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
             display: none;
+            width: 45%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        /* Expanding image text */
-        #imgtext {
-            position: absolute;
-            bottom: 15px;
-            left: 15px;
-            color: white;
-            font-size: 20px;
-        }
-
-        /* Closable button inside the expanded image */
-        .closebtn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            color: white;
-            font-size: 35px;
+        /* Add a pointer when hovering over the thumbnail images */
+        .cursor {
             cursor: pointer;
         }
 
-        /* The Modal (background) */
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            padding-top: 100px; /* Location of the box */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        /* Next & previous buttons */
+        .prev,.next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            background-color: #555;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
         }
 
-        /* Modal Content */
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
         }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,.next:hover {
+            color: white;
+            background-color: #4caf50;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* Container for image text */
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            margin-left: auto;
+            margin-right: auto;
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Six columns side by side */
+        .column {
+            float: left;
+            width: 500px;
+        }
+
+        /* Add a transparency effect for thumnbail images */
+        .demo {
+            opacity: 0.5;
+        }
+
+        .active,.demo:hover {
+            opacity: 1;
+        }
+
+/* END SECTION: image gallery */
+
+/* SECTION: split columns */
+
+        /* Create two equal columns that floats next to each other */
+        .s-column {
+            float: left;
+            width: 50%;
+            padding: 5px;
+        }
+
+        /* Clear floats after the columns */
+        .s-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .left {
+            width: 60%;
+        }
+
+        .right {
+            width: 40%;
+        }
+
+/* END SECTION: split columns */
 
     </style>
 
-    <p></p>
+    <h1 style="text-align: center; background-color: #333;color: white;">CAR NAME</h1>
         
-    <div class="imageContainer">    
-        <div class="gallery">
-            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2014-mercedes-benz-e-class-4-door-sedan-e350-sport-rwd-angular-front-exterior-view_100430386_l.jpg&f=1&nofb=1&ipt=77fbf84dd24eb272be93427ee82a0321b52d589e72c9a1d445d395aa79b5a5f5&ipo=images" onclick="myFunction(this)">
-            <div class="desc">Front Exterior</div>
-        </div>
-
-        <div class="gallery">
-            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2017-mercedes-benz-e-class-e300-sport-rwd-sedan-angular-rear-exterior-view_100566793_l.jpg&f=1&nofb=1&ipt=166a9f3af39284a3cbb70d588a40ce35e41d6ed9ca91fc0c69a6c9f6796b0573&ipo=images" onclick="myFunction(this)">
-            <div class="desc">Back Exterior</div>
-        </div>
-            
-        <div class="gallery">
-            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fst.automobilemag.com%2Fuploads%2Fsites%2F11%2F2016%2F01%2F2017-Mercedes-Benz-E-Class-interior-cockpit.jpg&f=1&nofb=1&ipt=8bbe158999c757ac8041f58bd5ace96e6c76d0aa1e1b67bda03a2fdde6529d03&ipo=images" onclick="myFunction(this)">
-            <div class="desc">Interior</div>
-        </div>
-    </div>
-
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-            <img id="expandedImg" style="width:100%">
-            <div id="imgtext"></div>
-        </div>
-    </div>
-
     <div class="container">
-        <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-        <img id="expandedImg" style="width:100%">
-        <div id="imgtext"></div>
+        <div class="mySlides">
+            <div class="numbertext">1/3</div>
+            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2014-mercedes-benz-e-class-4-door-sedan-e350-sport-rwd-angular-front-exterior-view_100430386_l.jpg&f=1&nofb=1&ipt=77fbf84dd24eb272be93427ee82a0321b52d589e72c9a1d445d395aa79b5a5f5&ipo=images" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">2/3</div>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2017-mercedes-benz-e-class-e300-sport-rwd-sedan-angular-rear-exterior-view_100566793_l.jpg&f=1&nofb=1&ipt=166a9f3af39284a3cbb70d588a40ce35e41d6ed9ca91fc0c69a6c9f6796b0573&ipo=images" style="width: 100%;">
+        </div>
+        <div class="mySlides">
+            <div class="numbertext">3/3</div>
+            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fst.automobilemag.com%2Fuploads%2Fsites%2F11%2F2016%2F01%2F2017-Mercedes-Benz-E-Class-interior-cockpit.jpg&f=1&nofb=1&ipt=8bbe158999c757ac8041f58bd5ace96e6c76d0aa1e1b67bda03a2fdde6529d03&ipo=images" style="width: 100%;">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+            <div class="column" style="background-color: white;">
+                <img class="demo cursor" style="width: 500px;" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2014-mercedes-benz-e-class-4-door-sedan-e350-sport-rwd-angular-front-exterior-view_100430386_l.jpg&f=1&nofb=1&ipt=77fbf84dd24eb272be93427ee82a0321b52d589e72c9a1d445d395aa79b5a5f5&ipo=images" onclick="currentSlide(1)" alt="Front Exterior">
+            </div>
+            <div class="column" style="background-color: white;">
+                <img class="demo cursor" style="width: 500px;" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.hgmsites.net%2Flrg%2F2017-mercedes-benz-e-class-e300-sport-rwd-sedan-angular-rear-exterior-view_100566793_l.jpg&f=1&nofb=1&ipt=166a9f3af39284a3cbb70d588a40ce35e41d6ed9ca91fc0c69a6c9f6796b0573&ipo=images" onclick="currentSlide(2)" alt="Back Exterior">
+            </div>
+            <div class="column" style="background-color: white;">
+                <img class="demo cursor" style="width: 500px;" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fst.automobilemag.com%2Fuploads%2Fsites%2F11%2F2016%2F01%2F2017-Mercedes-Benz-E-Class-interior-cockpit.jpg&f=1&nofb=1&ipt=8bbe158999c757ac8041f58bd5ace96e6c76d0aa1e1b67bda03a2fdde6529d03&ipo=images" onclick="currentSlide(3)" alt="Interior">
+            </div>
+        </div>
     </div>
-      
+
     <script>
-
-        // Get the modal
-        var modal = document.getElementById("myModal");
-
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal 
-        btn.onclick = function() {
-            modal.style.display = "block";
+        let slideIndex = 1;
+            showSlides(slideIndex);
+        
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+        
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
         }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-        }
-
-        function myFunction(imgs) {
-            var expandImg = document.getElementById("expandedImg");
-            var imgText = document.getElementById("imgtext");
-            expandImg.src = imgs.src;
-            imgText.innerHTML = imgs.alt;
-            expandImg.parentElement.style.display = "block";
+        
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("demo");
+            let captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
         }
     </script>
 
-    <p></p>
+    <h1></h1>
 
-    <table class="center" style="width: 1000px;">
-        <tr>
-            <th style="display: none;">Header 1</th>
-            <th style="display: none;">Header 2</th>
-        </tr>
-        <tr style="height: 50px;">
-            <td>Model name</td>
-            <td>Model name here</td>
-        </tr>
-        <tr style="height: 50px;">
-            <td>Brand</td>
-            <td>Car brand here</td>
-        </tr>
-        <tr style="height: 50px;">
-            <td>Year</td>
-            <td>Production year here</td>
-        </tr>
-        <tr style="height: 50px;">
-            <td>Body type</td>
-            <td>Car body type here</td>
-        </tr>
-        <tr style="height: 50px;">
-            <td>Num. of seats</td>
-            <td>Number of seats here</td>
-        </tr>
-        <tr style="height: 50px;">
-            <td>In stock</td>
-            <td>Number of cars available here</td>
-        </tr>
-    </table>
-
-    <p></p>
-
-    <div class="container_button">
-        <div class="center_button">
-            <button class="button_style" style="width: 300px; height: 100px; font-size: xx-large">Rent car</button>
+    <div class="s-row" style="background-color: white;">
+        <div class="s-column left" style="background-color: beige;">
+            <h3 style="padding: 15px;">Description</h3>
+            <p style="padding: 15px;">Description here</p>
+        </div>
+        <div class="s-column right">
+            <table class="center" style="width: 100%;">
+                <tr>
+                    <th style="display: none;">Header 1</th>
+                    <th style="display: none;">Header 2</th>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;">Model name</td>
+                    <td style="padding: 5px;">Model name here</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;">Brand</td>
+                    <td style="padding: 5px;">Car brand here</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;">Year</td>
+                    <td style="padding: 5px;">Production year here</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;">Body type</td>
+                    <td style="padding: 5px;">Car body type here</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;">Num. of seats</td>
+                    <td style="padding: 5px;">Number of seats here</td>
+                </tr>
+                <tr style="height: 50px;">
+                    <td style="padding: 5px;">In stock</td>
+                    <td style="padding: 5px;">Number of cars available here</td>
+                </tr>
+            </table>
+        
+            <p></p>
+        
+            <div class="container_button">
+                <div class="center_button">
+                    <button class="button_style" style="width: 500px; height: 100px; font-size: xx-large">Rent car</button>
+                </div>
+            </div>
         </div>
     </div>
     

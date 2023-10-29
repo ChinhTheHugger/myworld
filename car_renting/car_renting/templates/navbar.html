@@ -2,14 +2,18 @@
 <html>
     <head>
         <style>
+
+/* SECTION: nav bar */
+
             ul {
                 list-style-type: none;
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
-                background-color: #333;
+                background-color: #555;
                 position: sticky;
                 top: 0;
+                z-index: 100;
             }
             li {
                 float: left;
@@ -27,6 +31,11 @@
             .active {
                 background-color: #4CAF50;
             }
+
+/* END SECTION: nav bar */
+
+/* SECTION: dropdown button */
+
             li.dropdown {
                 display: inline-block;
             }
@@ -51,12 +60,26 @@
             .dropdown:hover .dropdown-content {
                 display: block;
             }
+
+/* END SECTION: dropdown button */
+
+/* SECTION: bg image */
+
+            body {
+                background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F06%2FLamborghini-Desktop-HD-Car-Wallpapers.jpg&f=1&nofb=1&ipt=b4955e6aeb6d19c745c9992687e36916f667e31d60d423ba96729dc4d55644cb&ipo=images");
+            }
+
+/* END SECTION: bg image */
+
         </style>
     </head>
     <body>
         <a href="homepage.html">
             <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fclipart-library.com%2Fimg%2F2050755.jpg&f=1&nofb=1&ipt=0d7adf383429f9590f03c88cc704bbfe868c5fa94abffc7e7ebc4d8674a7749f&ipo=images" alt="Car Logo" style="width: 10%;height: 10%;">
         </a>
+
+        <div class="bg-image"></div>
+
         <ul>
             <li>
                 <a class="active" href="homepage.html">Home</a>
@@ -67,9 +90,15 @@
             <li>
                 <a href="category.html">Category</a>
             </li>
+            <li style="float: right;">
+                <a href="signup.html">Login / Signup</a>
+            </li>
         </ul>
 
-        {% block homepage %}
+        {% block login %}
+        {% endblock %}
+
+        {% block signup %}
         {% endblock %}
 
         {% block search %}
