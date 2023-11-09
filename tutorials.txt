@@ -13,3 +13,9 @@ XAMPP: service > stop MySQL > start MySQL on XAMPP
 https://html5-templates.com/
 
 https://www.pythontutorial.net/django-tutorial/
+
+https://www.freecodecamp.org/news/how-to-create-an-analytics-dashboard-in-django-app/
+
+https://docs.djangoproject.com/en/4.2/topics/db/queries/
+
+https://codedec.com/tutorials/read-or-retrieve-data-from-database-in-django/
